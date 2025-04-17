@@ -1,35 +1,26 @@
-import React from "react";
+import React from 'react';
 
-export default function Calculation() {
-  // Hàm cộng
-  function cong(a, b) {
-    return a + b;
-  }
+function Calculator() {
+  const a = 10;
+  const b = 5;
 
-  // Hàm trừ
-  function tru(a, b) {
-    return a - b;
-  }
+  // Các hàm tính toán
+  const cong = (a, b) => a + b;
+  const tru = (a, b) => a - b;
+  const nhan = (a, b) => a * b;
+  const chia = (a, b) => {
+    return b === 0 ? "Không thể chia cho 0" : a / b;
+  };
 
-  // Hàm nhân
-  function nhan(a, b) {
-    return a * b;
-  }
-
-  // Hàm chia
-  function chia(a, b) {
-    if (b === 0) {
-      return "Không thể chia cho 0";
-    }
-    return a / b;
-  }
-
-  // Thực hiện phép tính và hiển thị kết quả
-  let a = 10;
-  let b = 10;
-
-  document.write(`${a} + ${b} = ${cong(a, b)}<br>`);
-  document.write(`${a} - ${b} = ${tru(a, b)}<br>`);
-  document.write(`${a} * ${b} = ${nhan(a, b)}<br>`);
-  document.write(`${a} / ${b} = ${chia(a, b)}<br>`);
+  return (
+    <div style={{ fontFamily: 'Arial', padding: '20px' }}>
+      <h2>Kết quả phép tính:</h2>
+      <p>{a} + {b} = {cong(a, b)}</p>
+      <p>{a} - {b} = {tru(a, b)}</p>
+      <p>{a} * {b} = {nhan(a, b)}</p>
+      <p>{a} / {b} = {chia(a, b)}</p>
+    </div>
+  );
 }
+
+export default Calculator;
