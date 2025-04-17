@@ -2,7 +2,7 @@ import React from 'react';
 
 function Calculator() {
   const a = 10;
-  const b = 5;
+  const b = 10;
 
   // Các hàm tính toán
   const cong = (a, b) => a + b;
